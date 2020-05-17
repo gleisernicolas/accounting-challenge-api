@@ -16,6 +16,8 @@ AllCops:
     - 'config/**/*'
     - 'bin/**/*'
     - 'Rakefile'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
   TargetRubyVersion: 2.7
 
 Naming/PredicateName:
