@@ -12,11 +12,12 @@ gem 'rails', '~> 6.0.3'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 4.0.0'
   gem 'rubocop-performance'
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
-  gem 'rspec-rails', '~> 4.0.0'
-  gem 'factory_bot_rails'
+  gem 'pry'
 end
 
 group :development do
