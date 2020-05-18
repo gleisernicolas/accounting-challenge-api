@@ -18,6 +18,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec'
   gem 'pry'
+  gem 'faker'
 end
 
 group :development do

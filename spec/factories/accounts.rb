@@ -2,8 +2,9 @@
 
 FactoryBot.define do
   factory :account do
-    name { 'MyString' }
-    balance { '999' }
-    token { 'MyText' }
+    name { Faker::Name.name }
+    balance { Faker::Number.number(digits: 7) }
+    token { SecureRandom.hex }
+    account_number { Faker::Number.number(digits: 6) }
   end
 end
