@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Dispatcher implementation used by Events::Dispatcher.
 class Lib::EventDispatcher
   # Register Reactors to Events.
@@ -75,4 +77,3 @@ class Lib::EventDispatcher
     end
   end
 end
-

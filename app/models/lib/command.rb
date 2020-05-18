@@ -5,7 +5,8 @@
 # A Command has the following public api.
 #
 # ```
-#   MyCommand.call(user: ..., post: ...) # shorthand to initialize, validate and execute the command
+#   MyCommand.call(user: ..., post: ...) # shorthand to initialize,
+#   validate and execute the command
 #   command = MyCommand.new(user: ..., post: ...)
 #   command.valid? # true or false
 #   command.errors # +> <ActiveModel::Errors ... >

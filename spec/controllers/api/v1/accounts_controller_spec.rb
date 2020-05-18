@@ -11,7 +11,7 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
 
   describe 'POST /api/v1/accounts' do
     context 'with valid attributes' do
-      context 'and new account' do
+      context 'with a new new account' do
         it 'create a account' do
           name = Faker::Name.name
           balance = Faker::Number.number(digits: 8)
