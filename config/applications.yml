@@ -1,0 +1,14 @@
+default: &default
+  ios_app:
+    token: 'ios_token'
+  android_app:
+    token: 'android_token'
+  windows_phone_app:
+    token: 'nobody_use'
+
+development:
+  <<: *default
+production:
+  <<: *default
+test:
+  <<: *default
