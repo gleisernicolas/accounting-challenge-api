@@ -31,6 +31,6 @@ Como são dados sensiveis decidir usar a gem (symmetric-encryption)[https://gith
 ### File base authentication
 Já trabalhei em alguns projetos que usam esse tipo de autenticação, e me parece ser bem sólido, contanto que o arquivo não esteja no repo, porém como é um simples desafio creio que não tenha problema
 
-## Futuros passos
+## Passos futuros
 Pretendo usar esse sistema como base para estudos sobre event driven design, então provavelmente vai mudar bastante no futuro.
 
