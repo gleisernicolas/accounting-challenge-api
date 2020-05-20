@@ -6,6 +6,7 @@ class ApplicationController < ActionController::API
 
   before_action :authenticate_application!
 
+  private
 
   def authenticate_application!
     decoded_token = Base64.decode64(request.headers["Authorization"])
