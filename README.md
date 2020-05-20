@@ -2,7 +2,7 @@
 Projeto feito como parte do seguinte desafio [Sistema de Contas bancárias](https://github.com/iugu/accounting_challenge).
 Projeto foi feito usando Ruby on Rails e banco de dados Mysql
 
-## Reuisitos
+## Requisitos
 Pra rodar o projeto você vai precisar do seguinte:
 
 - `Ruby 2.7.0`, a forma mais simples de instalar é usando o [RVM](https://rvm.io/rvm/install)
