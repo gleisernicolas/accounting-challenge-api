@@ -5,11 +5,11 @@ module Api
     class TransfersController < ApplicationController
 
       def create
-        source_account_number = transfer_params[:source_account_number]
-        destination_account_number = transfer_params[:destination_account_number]
+        source_number = transfer_params[:source_number]
+        destination_number = transfer_params[:destination_number]
 
-        source_account = Account.find_by_account_number(source_account_number)
-        destination_account = Account.find_by_account_number(destination_account_number)
+        source_account = Account.find_by_number(source_number)
+        destination_account = Account.find_by_number(destination_number)
 
         if source_account.nil?
           message = { message: 'Source Account does not exists!' }
@@ -30,7 +30,7 @@ module Api
       private
 
       def transfer_params
-        params.permit(:source_account_number ,:destination_account_number, :amount)
+        params.permit(:source_number ,:destination_number, :amount)
       end
     end
   end

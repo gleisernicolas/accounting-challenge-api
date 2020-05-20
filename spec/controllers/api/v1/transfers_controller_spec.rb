@@ -20,8 +20,8 @@ RSpec.describe Api::V1::TransfersController, type: :controller do
           expect do
             post :create,
                  params: {
-                   source_account_number: source_account.account_number,
-                   destination_account_number: destination_account.account_number,
+                   source_number: source_account.number,
+                   destination_number: destination_account.number,
                    amount: 6_000
                  }
           end.to change(Events::Account::Transfered, :count).by(1)
@@ -40,8 +40,8 @@ RSpec.describe Api::V1::TransfersController, type: :controller do
         expect do
           post :create,
                params: {
-                 source_account_number: 999666,
-                 destination_account_number: build(:account).account_number,
+                 source_number: 999666,
+                 destination_number: build(:account).number,
                  amount: 6_000
                }
         end.not_to change(Events::Account::Transfered, :count)
@@ -56,8 +56,8 @@ RSpec.describe Api::V1::TransfersController, type: :controller do
         expect do
           post :create,
                params: {
-                 source_account_number: create(:account).account_number,
-                 destination_account_number: 9996666999,
+                 source_number: create(:account).number,
+                 destination_number: 9996666999,
                  amount: 6_000
                }
         end.not_to change(Events::Account::Transfered, :count)

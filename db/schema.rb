@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_063349) do
   create_table "accounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.integer "balance", null: false
-    t.integer "account_number", null: false
+    t.string "number", null: false
     t.text "token", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

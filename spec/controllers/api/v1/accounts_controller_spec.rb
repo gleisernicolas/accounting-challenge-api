@@ -27,7 +27,7 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
           expect(response.status).to be(201)
           expect(JSON.parse(response.body)['name']).to eq(name)
           expect(JSON.parse(response.body)['balance']).to eq(balance)
-          expect(JSON.parse(response.body)['account_number'].nil?).to be(false)
+          expect(JSON.parse(response.body)['number'].nil?).to be(false)
           expect(JSON.parse(response.body)['token'].nil?).to be(false)
         end
       end
@@ -38,11 +38,11 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
 
           post :create,
                params: {
-                 account_number: account.account_number
+                 number: account.number
                }
 
           expect(response.status).to be(200)
-          expect(JSON.parse(response.body)['account_number']).to eq(account.account_number)
+          expect(JSON.parse(response.body)['number']).to eq(account.number)
           expect(JSON.parse(response.body)['token']).to eq(account.token)
         end
       end
