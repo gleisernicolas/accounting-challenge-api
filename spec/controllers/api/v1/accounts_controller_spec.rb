@@ -48,4 +48,26 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
       end
     end
   end
+
+  describe 'GET /api/v1/accounts/balance' do
+    context 'with a existing account' do
+      it 'return the balance' do
+        account = create(:account, balance: 1000)
+
+        get :balance, params: { number: account.number }
+
+        expect(response.status).to be(200)
+        expect(JSON.parse(response.body)['balance']).to eq(account.balance)
+      end
+    end
+
+    context 'without a existing account' do
+      it 'return the error "Couldn\'t find Account"' do
+        get :balance, params: { number: 999 }
+
+        expect(response.status).to be(404)
+        expect(JSON.parse(response.body)['message']).to eq("Couldn't find Account")
+      end
+    end
+  end
 end

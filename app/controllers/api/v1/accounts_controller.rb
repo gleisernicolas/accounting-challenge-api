@@ -18,6 +18,12 @@ module Api
         end
       end
 
+      def balance
+        account = Account.find_by_number!(params[:number])
+
+        json_response( { balance: account.balance }, :ok )
+      end
+
       private
 
       def account_params
