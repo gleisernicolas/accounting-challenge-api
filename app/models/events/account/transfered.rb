@@ -10,7 +10,6 @@ module Events
       data_attributes :source_account, :destination_account, :amount
 
       def apply(_account = nil)
-
         source_account.balance -= amount
         destination_account.balance += amount
         destination_account.save
@@ -28,4 +27,3 @@ module Events
     end
   end
 end
-

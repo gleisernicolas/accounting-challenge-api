@@ -3,7 +3,6 @@
 module Api
   module V1
     class TransfersController < ApplicationController
-
       def create
         source_number = transfer_params[:source_number]
         destination_number = transfer_params[:destination_number]
@@ -23,14 +22,14 @@ module Api
           amount = transfer_params[:amount]
           Events::Account::Transfered.create!(source_account: source_account, destination_account: destination_account, amount: amount)
 
-          json_response( { message: 'Successful transfer!'} , :created)
+          json_response({ message: 'Successful transfer!' }, :created)
         end
       end
 
       private
 
       def transfer_params
-        params.permit(:source_number ,:destination_number, :amount)
+        params.permit(:source_number, :destination_number, :amount)
       end
     end
   end

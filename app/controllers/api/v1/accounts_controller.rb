@@ -22,7 +22,7 @@ module Api
       def balance
         account = Account.find_by_number!(params[:number])
 
-        json_response( { balance: account.balance }, :ok )
+        json_response({ balance: account.balance }, :ok)
       end
 
       private

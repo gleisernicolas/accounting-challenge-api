@@ -1,10 +1,8 @@
-
 # frozen_string_literal: true
 
 require 'rails_helper'
 
 RSpec.describe Api::V1::TransfersController, type: :controller do
-
   before do
     request.headers['Authorization'] = Base64.encode64('ios_app:ios_token')
     request.headers['Content-Type'] = 'application/json'
@@ -61,7 +59,7 @@ RSpec.describe Api::V1::TransfersController, type: :controller do
         expect do
           post :create,
                params: {
-                 source_number: 999666,
+                 source_number: 999_666,
                  destination_number: build(:account).number,
                  amount: 6_000
                }
@@ -78,7 +76,7 @@ RSpec.describe Api::V1::TransfersController, type: :controller do
           post :create,
                params: {
                  source_number: create(:account).number,
-                 destination_number: 9996666999,
+                 destination_number: 9_996_666_999,
                  amount: 6_000
                }
         end.not_to change(Events::Account::Transfered, :count)

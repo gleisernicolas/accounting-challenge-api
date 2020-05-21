@@ -7,10 +7,10 @@ RSpec.describe Events::Account::Transfered, type: :model do
     let(:source_account) { create(:account, balance: 10_000) }
     let(:destination_account) { create(:account, balance: 5_000) }
 
-    context '#validations' do
+    describe '#validations' do
       it 'amount must be positive greater than one integer' do
-        expect { described_class.create!(source_account: source_account, destination_account: destination_account, amount: -1000) }.
-          to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Amount must be greater than or equal to 1')
+        expect { described_class.create!(source_account: source_account, destination_account: destination_account, amount: -1000) }
+          .to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Amount must be greater than or equal to 1')
       end
     end
 
@@ -25,8 +25,8 @@ RSpec.describe Events::Account::Transfered, type: :model do
 
     context 'when source account does not have funds' do
       it 'does not complete the transfer' do
-        expect { described_class.create!(source_account: source_account, destination_account: destination_account, amount: 200_000) }.
-          to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Amount Transfer amount cannot be greater than source account balance')
+        expect { described_class.create!(source_account: source_account, destination_account: destination_account, amount: 200_000) }
+          .to raise_error(ActiveRecord::RecordInvalid, 'Validation failed: Amount Transfer amount cannot be greater than source account balance')
 
         expect(source_account.reload.balance).to eq(10_000)
         expect(destination_account.reload.balance).to eq(5_000)

@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::AccountsController, type: :controller do
-
   before do
     request.headers['Authorization'] = Base64.encode64('ios_app:ios_token')
     request.headers['Content-Type'] = 'application/json'
