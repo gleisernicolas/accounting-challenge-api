@@ -33,6 +33,27 @@ RSpec.describe Api::V1::TransfersController, type: :controller do
           expect(destination_account.reload.balance).to be(6_000)
         end
       end
+
+      context 'when source account does not have funds' do
+        it 'does not perform the transfer' do
+          source_account = create(:account, balance: 0)
+          destination_account = create(:account, balance: 0)
+
+          expect do
+            post :create,
+                 params: {
+                   source_number: source_account.number,
+                   destination_number: destination_account.number,
+                   amount: 6_000
+                 }
+          end.not_to change(Events::Account::Transfered, :count)
+
+          expect(response.status).to be(422)
+
+          expect(source_account.reload.balance).to be(0)
+          expect(destination_account.reload.balance).to be(0)
+        end
+      end
     end
 
     context 'when source account does not exists do' do

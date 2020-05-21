@@ -8,7 +8,8 @@ module Api
         existing_account = Account.find_by_number(number)
 
         if existing_account
-          json_response({ number: existing_account.number,
+          json_response({ message: 'Account number already in use',
+                          number: existing_account.number,
                           token: existing_account.token }, :ok)
         else
           created_event = Events::Account::Created.create!(account_params)

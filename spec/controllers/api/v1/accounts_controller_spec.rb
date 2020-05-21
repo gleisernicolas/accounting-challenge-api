@@ -33,7 +33,7 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
       end
 
       context 'with a existing account' do
-        it 'return the account number and token' do
+        it 'return the account number and token with the message "Account number already in use"' do
           account = create(:account)
 
           post :create,
@@ -42,6 +42,7 @@ RSpec.describe Api::V1::AccountsController, type: :controller do
                }
 
           expect(response.status).to be(200)
+          expect(JSON.parse(response.body)['message']).to eq('Account number already in use')
           expect(JSON.parse(response.body)['number']).to eq(account.number)
           expect(JSON.parse(response.body)['token']).to eq(account.token)
         end
