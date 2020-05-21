@@ -17,6 +17,5 @@ COPY startup.sh /usr/bin/
 RUN chmod +x /usr/bin/startup.sh
 ENTRYPOINT ["startup.sh"]
 EXPOSE 3000
-
 # Start the main process.
 CMD ["rails", "server", "-b", "0.0.0.0"]

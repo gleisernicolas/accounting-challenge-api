@@ -10,15 +10,19 @@ Pra rodar o projeto você vai precisar do seguinte:
 - Nodejs, pode usar o [NVM](https://github.com/nvm-sh/nvm)
 - [Yarn](https://classic.yarnpkg.com/pt-BR/docs/install/#debian-stable)
 
-## Rodando o projeto
+Ou pode usar o Docker, bastando ter o Docker e docker-compose instalado
+
+## Rodando o projeto sem docker
 
 Pra rodar o projeto basta seguir os passos:
 - `bundle install`
 - Ir em database.yml e alterar `username` e `password` para as credenciais do banco instalado.
 - `bundle exec rails db:setup`
 
+## Testando a aplicação
 
-Depos disso você pode rodar `bundle exec rspec` para rodar a suite de testes ou `bundle exec rails s` pra subir o projeto.
+Depos disso você pode rodar `bundle exec rspec` para rodar a suite de testes , `bundle exec rails s` ou `docker-compose up` pra subir o projeto.
+Após o projeto estiver rodando você pode usar esta [collection do postman](postman_collection.json) para testar as rotas ou fazer manualmente.
 
 ## Motivos de algumas decisões
 ### Event sourcing
