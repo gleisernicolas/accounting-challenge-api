@@ -22,7 +22,7 @@ Pra rodar o projeto basta seguir os passos:
 ## Testando a aplicação
 
 Depos disso você pode rodar `bundle exec rspec` para rodar a suite de testes , `bundle exec rails s` ou `docker-compose up` pra subir o projeto.
-Após o projeto estiver rodando você pode usar esta [collection do postman](postman_collection.json) para testar as rotas ou fazer manualmente.
+Após o projeto estiver rodando você pode usar esta [collection do postman](accounting-challenge-api.postman_collection.json) para testar as rotas ou fazer manualmente.
 obs: por enquanto sempre é preciso remover o `tmp/pids/server.pid` quando for subir o projeto novamente :( ainda não consegui resolver isso
 
 ## Motivos de algumas decisões

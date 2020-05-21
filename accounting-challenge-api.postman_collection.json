@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "83a93c35-c25c-4b47-959b-ff8a6c83876c",
+		"name": "accounting-challenge-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST accounts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "aW9zX2FwcDppb3NfdG9rZW4=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\"name\": \"Nicolas\",\n\t\"number\": 20,\n\t\"balance\": 1000\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					]
+				},
+				"description": "create a new account"
+			},
+			"response": []
+		},
+		{
+			"name": "GET accounts/balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "aW9zX2FwcDppb3NfdG9rZW4=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/accounts/balance/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"accounts",
+						"balance",
+						"20"
+					]
+				},
+				"description": "create a new transfer\n"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "aW9zX2FwcDppb3NfdG9rZW4=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n\t\"source_number\": 10, \n\t\"destination_number\": 20,\n\t\"amount\": 500\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/transfers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"transfers"
+					]
+				},
+				"description": "create a new transfer\n"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
